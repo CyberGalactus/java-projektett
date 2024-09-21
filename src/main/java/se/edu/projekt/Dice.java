@@ -15,7 +15,7 @@ public class Dice {
         String[] playerNames = new String[2];
 
         for (int i = 0; i < 2; i++) {
-            System.out.println("Player " + (i + 1) + ", choose a character or input your name:");
+            System.out.println("Player choose a character or input your name:"); // ungäfer som console.log()
             System.out.println("1. Sofia");
             System.out.println("2. Erik");
             System.out.println("3. Sam");
@@ -45,19 +45,19 @@ public class Dice {
                     name = dice.nextLine();
                     break;
             }
-
-            if (i == 1 && name.equals(playerNames[0])) {
+// andra loppen
+            if (i == 1 && name.equals(playerNames[0])) { // name.equals(playerNames[0]) Kontrollerar om spelare 2 har
+                // valt samma namn som den första spelaren
                 System.out.println("Name already taken by Player 1, please choose another name.");
-                i--;
+                i--; // i kommer att minska på 1 så att loppen upprepar samma fråga tills du har valt unik namn
             } else {
-                playerNames[i] = name;
+                playerNames[i] = name; //här väljer spelare 2 unik namn och det lagras i playernames arrayen
             }
         }
 
         System.out.println("Player 1: " + playerNames[0]);
         System.out.println("Player 2: " + playerNames[1]);
-        dice.nextLine();
-        System.out.println("hello " + playerNames[0] + playerNames[1] + " are you ready to play!");
+        System.out.println("hello " + playerNames[0] + " and " + playerNames[1] + " are you ready to play!");
     }
 }
 
