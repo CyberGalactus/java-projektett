@@ -30,6 +30,7 @@ public class Dice {
             switch (choice) {
                 case 1:
                     name = "Sofia";
+
                     break;
                 case 2:
                     name = "Erik";
@@ -58,6 +59,17 @@ public class Dice {
         System.out.println("Player 1: " + playerNames[0]);
         System.out.println("Player 2: " + playerNames[1]);
         System.out.println("hello " + playerNames[0] + " and " + playerNames[1] + " are you ready to play!");
+
+
+        int roll = slump.nextInt(6) + 1; // Ger ett tal mellan 1 och 6 System.out.println("Du kastade: " + roll);
+        System.out.println("Player 1: " + playerNames[0] + " slår första kastet och får en "  + roll);
+        int rolle = slump.nextInt(6) + 1;
+        System.out.println("Player 2: " + playerNames[1] + " slår första kastet och får en " + rolle);
+        int roller = slump.nextInt(6) + 1;
+
+        System.out.println("Player 1: " + playerNames[0] + " slår andra kastet och får en "  + roller);
+        int rolleer = slump.nextInt(6) + 1;
+        System.out.println("Player 2: " + playerNames[1] + " slår andra kastet och får en " + rolleer);
     }
 }
 
