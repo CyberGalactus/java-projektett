@@ -70,6 +70,21 @@ public class Dice {
         System.out.println("Player 1: " + playerNames[0] + " slår andra kastet och får en "  + roller);
         int rolleer = slump.nextInt(6) + 1;
         System.out.println("Player 2: " + playerNames[1] + " slår andra kastet och får en " + rolleer);
+
+        // visar dem som vann
+        int total1 = roll + roller;
+        int total2 = rolle + rolleer;
+
+        System.out.println("spelare 1: " + playerNames[0] + " får " + total1);
+        System.out.println("spelare 2: " + playerNames[1] + " får " + total2);
+
+        if (total1 > total2) {
+            System.out.println("spelare 1: " + playerNames[0] + " Vinner spelet ");
+        } else if (total1 < total2) {
+            System.out.println("spelare 1: " + playerNames[1] + " Vinner spelet ");
+        } else {
+            System.out.println("det är oavgjort, Game over!");
+        }
     }
 }
 
