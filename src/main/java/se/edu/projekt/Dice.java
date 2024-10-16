@@ -11,6 +11,7 @@ public class Dice {
         // Slumpmässiga tärningskast
         Random slump = new Random();
 
+
         // Arrays för att behålla spelarens val
         String[] playerNames = new String[2];
 
@@ -55,33 +56,40 @@ public class Dice {
                 playerNames[i] = name; //här väljer spelare 2 unik namn och det lagras i playernames arrayen
             }
         }
+        Player player1 = new Player(playerNames[0]);
+        Player player2 = new Player(playerNames[1]);
 
-        System.out.println("Player 1: " + playerNames[0]);
-        System.out.println("Player 2: " + playerNames[1]);
-        System.out.println("hello " + playerNames[0] + " and " + playerNames[1] + " are you ready to play!");
+        System.out.println("Player 1: " + player1.getName());
+        System.out.println("Player 2: " + player2.getName());
+        System.out.println("hello " + playerNames[0] + " and " + playerNames[1] + " are you ready to play!\n");
+        dice.nextLine();
 
 
         int roll = slump.nextInt(6) + 1; // Ger ett tal mellan 1 och 6 System.out.println("Du kastade: " + roll);
-        System.out.println("Player 1: " + playerNames[0] + " slår första kastet och får en "  + roll);
+        System.out.println("Player 1: " + player1.getName() + " slår första kastet och får en "  + roll);
+        dice.nextLine();
         int rolle = slump.nextInt(6) + 1;
-        System.out.println("Player 2: " + playerNames[1] + " slår första kastet och får en " + rolle);
+        System.out.println("Player 2: " + player2.getName() + " slår första kastet och får en " + rolle);
+        dice.nextLine();
         int roller = slump.nextInt(6) + 1;
 
-        System.out.println("Player 1: " + playerNames[0] + " slår andra kastet och får en "  + roller);
+        System.out.println("Player 1: " + player1.getName() + " slår andra kastet och får en "  + roller);
+        dice.nextLine();
         int rolleer = slump.nextInt(6) + 1;
-        System.out.println("Player 2: " + playerNames[1] + " slår andra kastet och får en " + rolleer);
+        System.out.println("Player 2: " + player2.getName() + " slår andra kastet och får en " + rolleer);
+        dice.nextLine();
 
         // visar dem som vann
         int total1 = roll + roller;
         int total2 = rolle + rolleer;
 
-        System.out.println("spelare 1: " + playerNames[0] + " får " + total1);
-        System.out.println("spelare 2: " + playerNames[1] + " får " + total2);
+        System.out.println("spelare 1: " + player1.getName() + " får " + total1);
+        System.out.println("spelare 2: " + player2.getName() + " får " + total2);
 
         if (total1 > total2) {
-            System.out.println("spelare 1: " + playerNames[0] + " Vinner spelet ");
+            System.out.println("spelare 1: " + player1.getName() + " Vinner spelet ");
         } else if (total1 < total2) {
-            System.out.println("spelare 1: " + playerNames[1] + " Vinner spelet ");
+            System.out.println("spelare 2: " + player2.getName() + " Vinner spelet ");
         } else {
             System.out.println("det är oavgjort, Game over!");
         }
